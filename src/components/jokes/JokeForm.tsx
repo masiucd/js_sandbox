@@ -2,9 +2,10 @@
 import * as React from 'react';
 
 import { StyledJokeForm, StyledLabel, StyledSelect } from './Styled.Joke';
+import { StyledBtn } from '../styled/Button';
 
 interface P {
-
+  isLoading: boolean;
   getRandomJoke: (category: string) => void;
 }
 
@@ -12,13 +13,14 @@ interface IFormData {
   category: string;
 }
 
-const JokeForm: React.FC<P> = ({ getRandomJoke }) => {
+const JokeForm: React.FC<P> = ({ getRandomJoke, isLoading }) => {
   const [formData, setformData] = React.useState({
     category: 'any',
   });
 
 
   const { category } = formData;
+
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -34,7 +36,7 @@ const JokeForm: React.FC<P> = ({ getRandomJoke }) => {
   return (
     <StyledJokeForm onSubmit={handleSubmit}>
       <StyledLabel>
-        <span>Choose Category:</span>
+        <span>Choose Category</span>
         <StyledSelect value={category} onChange={handleChange} name="category">
           <option disabled>Choose Category</option>
           <option value="programming">programming</option>
@@ -43,7 +45,7 @@ const JokeForm: React.FC<P> = ({ getRandomJoke }) => {
           <option value="any">any</option>
         </StyledSelect>
       </StyledLabel>
-      <button type="submit">Get Joke</button>
+      <StyledBtn type="submit" disabled={!isLoading && isLoading}>Get Joke</StyledBtn>
     </StyledJokeForm>
   );
 };

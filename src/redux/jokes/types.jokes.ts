@@ -11,8 +11,10 @@ export enum JokeCategory {
 export interface IJoke {
   category: string;
   type: string;
-  joke: string;
+  setup: string;
+  delivery: string;
   number: 27;
+  nsfw?: boolean;
   warning: string;
 }
 
