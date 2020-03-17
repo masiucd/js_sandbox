@@ -8,7 +8,7 @@ export enum JokeCategory {
   ANY = 'ANY',
 }
 
-interface IJoke {
+export interface IJoke {
   category: JokeCategory;
   type: string;
   joke: string;
@@ -16,7 +16,25 @@ interface IJoke {
   warning: string;
 }
 
-export interface IUserState{
-  joke: IJoke;
+export interface IJokeState{
+  joke: IJoke | null;
   loading: boolean;
+  error: Record<string, any> | null;
 }
+
+export enum JokeActionTypes {
+  GET_RANDOM_JOKE = 'GET_RANDOM_JOKE',
+  CATCH_JOKE_ERROR = 'CATCH_JOKE_ERROR',
+}
+
+export interface GetRandomJokeAction {
+  type: JokeActionTypes.GET_RANDOM_JOKE;
+  payload: IJoke;
+}
+export interface CatchJokeErrorAction {
+  type: JokeActionTypes.CATCH_JOKE_ERROR;
+  payload: Record<string, any>;
+}
+
+
+export type JokeTypesReducer = GetRandomJokeAction | CatchJokeErrorAction

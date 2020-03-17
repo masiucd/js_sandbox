@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
+import jokesReducer from './jokes/jokes.reducer';
 
 
 export default combineReducers({
-  user: () => 'user123',
+  joke: jokesReducer,
 });
