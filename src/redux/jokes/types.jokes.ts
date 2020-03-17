@@ -9,7 +9,7 @@ export enum JokeCategory {
 }
 
 export interface IJoke {
-  category: JokeCategory;
+  category: string;
   type: string;
   joke: string;
   number: 27;

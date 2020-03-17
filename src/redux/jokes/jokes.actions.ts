@@ -11,7 +11,7 @@ export const catchError = (error: Record<string, any>): CatchJokeErrorAction => 
 });
 
 export const getRandomJoke = (
-  category: JokeCategory,
+  category: string,
 ) => async (dispatch: Dispatch<GetRandomJokeAction | CatchJokeErrorAction>) => {
   try {
     const res = await fetch(`https://sv443.net/jokeapi/category/${category}`);
