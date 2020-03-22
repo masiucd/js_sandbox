@@ -39,10 +39,11 @@ export const StyledLabel = styled.label`
 
 `;
 export const StyledSelect = styled.select`
+
   width: 25rem;
   background: ${(props) => props.theme.colors.primary};
   color: ${(props) => props.theme.colors.offWhite};
-  font-size: 1rem;
+  font-size: 1.3rem;
   box-shadow: ${(props) => props.theme.shadow.lightShadow};
   border: 1px solid ${(props) => props.theme.colors.primary};
   -webkit-appearance: none;
@@ -54,7 +55,7 @@ export const StyledSelect = styled.select`
   display: flex; */
   overflow: hidden;
   border-radius: .5rem;
-  padding: .5rem 0;
+  padding: .5rem 1rem;
   display: flex;
   option {
     color: ${(props) => props.theme.colors.offWhite};

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import * as React from 'react';
 import { IJoke } from '../../redux/jokes/types.jokes';
 import { StyledJokeDisplay, StyledJokeHeader, JokeBody } from './Styled.Joke';
@@ -9,6 +10,7 @@ interface P {
 
 const JokeDisplay: React.FC<P> = ({ jokeData, isLoading }) => (
   <>
+    { isLoading && !jokeData && <h1>...Let's get some jokes</h1> }
     {!isLoading && jokeData && (
       <StyledJokeDisplay>
         <>

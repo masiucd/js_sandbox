@@ -15,6 +15,7 @@ export const StyledBtn = styled.button`
   border: none;
   cursor: pointer;
   transition: ${({ theme }) => theme.transition.mainTransition};
+  outline:none;
   &:hover{
     box-shadow: ${({ theme }) => theme.shadow.darkShadow};
     background: ${({ theme }) => theme.colors.danger};

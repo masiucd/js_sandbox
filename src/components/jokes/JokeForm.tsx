@@ -18,8 +18,14 @@ const JokeForm: React.FC<P> = ({ getRandomJoke, isLoading }) => {
     category: 'any',
   });
 
+  const [btnCount, setBtnCount] = React.useState<number>(0);
+
 
   const { category } = formData;
+
+  const increment = () => {
+    setBtnCount(btnCount + 1);
+  };
 
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -30,6 +36,7 @@ const JokeForm: React.FC<P> = ({ getRandomJoke, isLoading }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     getRandomJoke(category);
+    increment();
   };
 
 
@@ -45,7 +52,7 @@ const JokeForm: React.FC<P> = ({ getRandomJoke, isLoading }) => {
           <option value="any">any</option>
         </StyledSelect>
       </StyledLabel>
-      <StyledBtn type="submit" disabled={!isLoading && isLoading}>Get Joke</StyledBtn>
+      <StyledBtn type="submit" disabled={!isLoading && isLoading}>{btnCount === 0 ? 'Get Joke' : 'Get new Joke'}</StyledBtn>
     </StyledJokeForm>
   );
 };
