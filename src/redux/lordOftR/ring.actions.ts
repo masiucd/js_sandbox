@@ -21,7 +21,7 @@ export const getChars = () => async (dispatch: Dispatch<GetCharAction|CatchLordE
     const resBody = await res.json();
     dispatch({
       type: LordActionTypes.GET_CHARS,
-      payload: resBody.docs,
+      payload: resBody.docs.slice(50, 75),
     });
   } catch (err) {
     dispatch({

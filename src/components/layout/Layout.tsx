@@ -4,6 +4,7 @@ import * as React from 'react';
 import { ThemeProvider } from 'styled-components';
 import theme from '../../utils/theme';
 import GlobalStyles from '../styled/GlobalStyles';
+import Navbar from './nav/Navbar';
 
 interface P {
   children: React.ReactNode;
@@ -12,6 +13,7 @@ interface P {
 const Layout: React.FC<P> = ({ children }) => (
   <ThemeProvider theme={theme}>
     <GlobalStyles />
+    <Navbar />
     <main className="MainApp">
       {children}
     </main>

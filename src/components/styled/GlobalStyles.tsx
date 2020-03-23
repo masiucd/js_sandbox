@@ -1,4 +1,9 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, css } from 'styled-components';
+
+export const FlexStyles = css`
+  display: flex;
+  justify-content: center;
+`;
 
 export default createGlobalStyle`
 
