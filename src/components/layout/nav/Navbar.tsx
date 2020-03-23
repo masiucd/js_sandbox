@@ -1,13 +1,17 @@
 import * as React from 'react';
 import uuid from 'uuid/v4';
 
-import { StyledNav, LargeList, ListLink } from './Styled.Nav';
+import {
+  StyledNav, LargeList, ListLink, SmallList,
+} from './Styled.Nav';
+import useToggle from '../../../hooks/useToggle';
 
 interface Props {
 
 }
 
 const Navbar: React.FC<Props> = () => {
+  const [showMenu, toggleMenu] = useToggle(false);
   const [navData, setNavData] = React.useState([
     {
       id: uuid(),
@@ -30,6 +34,24 @@ const Navbar: React.FC<Props> = () => {
 
     <StyledNav>
 
+      <div id="menuToggle" onClick={toggleMenu}>&#955;	</div>
+
+      {showMenu && (
+        <SmallList>
+          {navData.map((link) => (
+            <li key={link.id}>
+              <ListLink to={link.path}>
+                {' '}
+                {link.text}
+                {' '}
+              </ListLink>
+            </li>
+          ))}
+
+        </SmallList>
+      )}
+
+
       <LargeList>
         {navData.map((link) => (
           <li key={link.id}>
@@ -40,7 +62,6 @@ const Navbar: React.FC<Props> = () => {
             </ListLink>
           </li>
         ))}
-
       </LargeList>
 
     </StyledNav>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { IChar } from '../../../redux/lordOftR/ring.types';
-import { StyledChar } from '../Styled.Rings';
+import { StyledBox } from '../Styled.Rings';
 import { handleEmptyValue } from '../../../utils/helpers';
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 
 
 const CharItem: React.FC<Props> = ({ char }) => (
-  <StyledChar>
+  <StyledBox>
     <strong>
       {' '}
       <span>name:</span>
@@ -30,7 +30,7 @@ const CharItem: React.FC<Props> = ({ char }) => (
       { handleEmptyValue(char, 'death', 'No Birth') }
     </strong>
 
-  </StyledChar>
+  </StyledBox>
 );
 export default CharItem;
 

@@ -26,7 +26,7 @@ export const BtnGroup = styled.div`
   }
 `;
 
-export const StyledChar = styled.div`
+export const StyledBox = styled.div`
   ${FlexStyles};
   align-items: center;
   flex-direction: column;
@@ -37,12 +37,14 @@ export const StyledChar = styled.div`
   box-shadow: ${({ theme }) => theme.shadow.lightShadow};
   width: 100%;
   strong{
-    font-size: 1.2rem;
+    width: 33%;
+    font-size: 1rem;
     letter-spacing:.1rem;
     margin:.5rem;
+    text-align: center;
     span{
       text-transform: capitalize;
-      color: ${({ theme }) => theme.colors.common};
+      color: ${({ theme }) => theme.colors.danger};
     }
 
   }

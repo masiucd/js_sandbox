@@ -17,6 +17,7 @@ import useToggle from '../../hooks/useToggle';
 import { StyledBtn } from '../styled/Button';
 import CharItem from './char/CharItem';
 import MovieItem from './char/MovieItem';
+import QuoteItem from './quote/QuoteItem';
 
 interface P {
   characters: IChar[];
@@ -76,6 +77,9 @@ const LordOfTheRings: React.FC<P> = ({
         )}
         {!isLoading && showMovies && (
           movies.map((m) => <MovieItem key={m._id} movie={m} />)
+        )}
+        {!isLoading && showQuotes && (
+          quotes.map((q) => <QuoteItem key={q._id} quote={q} />)
         )}
       </Wrapper>
     </StyledLordOfTheRing>
