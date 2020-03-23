@@ -8,9 +8,22 @@ export const StyledLordOfTheRing = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-export const CharsWrapper = styled.section`
+
+export const Wrapper = styled.section`
   width: 100%;
   height: 100%;
+`;
+
+export const BtnGroup = styled.div`
+  ${FlexStyles};
+  flex-direction: column;
+  button{
+    margin: .5rem
+  }
+  @media(min-width:760px){
+    flex-direction: row;
+    justify-content: space-around;
+  }
 `;
 
 export const StyledChar = styled.div`
@@ -31,6 +44,7 @@ export const StyledChar = styled.div`
       text-transform: capitalize;
       color: ${({ theme }) => theme.colors.common};
     }
+
   }
 
   @media(min-width:760px){

@@ -1,5 +1,5 @@
+/* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
-import theme from '../../utils/theme';
 
 
 export const StyledBtn = styled.button`
@@ -20,5 +20,10 @@ export const StyledBtn = styled.button`
     box-shadow: ${({ theme }) => theme.shadow.darkShadow};
     background: ${({ theme }) => theme.colors.danger};
   color: ${({ theme }) => theme.colors.offWhite};
+  }
+
+  &:disabled{
+    background: rgba(0,0,0,.4);
+    color: #777;
   }
 `;
