@@ -79,7 +79,7 @@ const LordOfTheRings: React.FC<P> = ({
           movies.map((m) => <MovieItem key={m._id} movie={m} />)
         )}
         {!isLoading && showQuotes && (
-          quotes.map((q) => <QuoteItem key={q._id} quote={q} />)
+          quotes.map((q) => <QuoteItem key={q._id} quote={q} movies={movies} characters={characters} />)
         )}
       </Wrapper>
     </StyledLordOfTheRing>

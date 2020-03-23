@@ -73,7 +73,7 @@ export const getQuotes = () => async (dispatch: Dispatch<GetQuotesAction|CatchLo
   } catch (err) {
     dispatch({
       type: LordActionTypes.CATCH_LORD_ERRORS,
-      payload: { msg: err.response, status: err.response.status },
+      payload: err,
     });
   }
 };

@@ -1,13 +1,18 @@
+/* eslint-disable import/extensions */
+/* eslint-disable react/prop-types */
 import * as React from 'react';
-import { IQuote } from '../../../redux/lordOftR/ring.types';
+import { IQuote, IMovie, IChar } from '../../../redux/lordOftR/ring.types';
 import { StyledBox } from '../Styled.Rings';
-import { handleEmptyValue } from '../../../utils/helpers';
+import { handleEmptyValue, populate } from '../../../utils/helpers';
+
 
 interface Props {
   quote: IQuote;
+  movies: IMovie[];
+  characters: IChar[];
 }
 
-const QuoteItem: React.FC<Props> = ({ quote }) => (
+const QuoteItem: React.FC<Props> = ({ quote, movies, characters }) => (
   <StyledBox>
     <strong>
       <span>dialog </span>
@@ -15,6 +20,9 @@ const QuoteItem: React.FC<Props> = ({ quote }) => (
     </strong>
     <strong>
       <span>from </span>
+      {/* {
+        populate(quote.movie, movies)
+      } */}
       {handleEmptyValue(quote, 'movie', 'no movie')}
     </strong>
     <strong>
@@ -23,4 +31,5 @@ const QuoteItem: React.FC<Props> = ({ quote }) => (
     </strong>
   </StyledBox>
 );
+
 export default QuoteItem;
