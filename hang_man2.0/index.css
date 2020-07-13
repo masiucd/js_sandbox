@@ -12,11 +12,159 @@ html {
 }
 
 body {
-  height: 100%;
+  height: 100vh;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color: #fff;
+  background-color: #040522c9;
+}
+
+
+.game {
+
+  max-width: 1100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 2rem;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.wrong-letters {
+  padding: 4rem;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 16em;
+  ;
+}
+
+.wrong-letters p {
+  padding: 1rem 0;
+}
+
+.wrong-letters span {
+  padding: 1rem;
+}
+
+.word {
+  font-size: 2rem;
+  padding: 2rem;
+  display: flex;
+
+  margin: 0 auto;
+}
+
+.word>div {
+  text-decoration: underline 5px solid #fff;
+
+}
+
+.word .letter {
+  padding: 1rem;
+  font-size: 3rem;
+}
+
+
+
+h1 {
+  font-size: 4rem;
+  padding: 2rem 1rem;
+}
+
+
+.figure-wrapper {
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 4px;
+  stroke-linecap: round;
+
+  margin-right: auto;
+}
+
+.figure-part {
+  display: none;
+}
+
+p {
+  font-size: 2.8rem;
+}
+
+span {
+  font-size: 1.8rem;
+
+}
+
+.popup-container {
+  transform: translateY(1000%);
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  transition: 200ms ease all;
+}
+
+.popup-container .popup {
+  background: rgba(255, 255, 255, 0.87);
+  padding: 3rem;
   color: #333;
+  width: 60%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup h2 {
+  font-size: 3rem;
+  padding: 2rem 0;
+}
+
+.popup button {
+  padding: .5rem .9rem;
+  font-size: 2rem;
+  width: 14em;
+  background: #333;
+  color: #fff;
+  border: #fff 2px solid;
+  transition: 200ms ease all;
+  cursor: pointer;
+  outline: 0;
+}
+
+.popup button:active {
+  transform: scale(0.98);
+}
+
+.popup button:hover {
+  background: #fff;
+  color: #333;
+  border: #333 2px solid;
+}
+
+.notification {
+  transform: translateX(1000%);
+  position: fixed;
+  bottom: 30rem;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 300ms ease all;
 }
