@@ -1,0 +1,137 @@
+*::before,
+*::after,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 10px;
+  font-family: sans-serif;
+}
+
+body {
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #333;
+}
+
+.container {
+  padding: 1rem 2rem;
+  width: 80vmax;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.line {
+  border: 2px solid #333;
+  width: 80%;
+  height: 5rem;
+  transition: 500ms ease all;
+  overflow: hidden;
+}
+
+.progress {
+  padding: 1rem;
+  transition: 500ms ease all;
+  height: 100%;
+  /* background: #333; */
+  overflow: hidden;
+}
+
+h3 {
+  font-size: 4rem;
+  padding: 2rem;
+  text-align: center;
+  line-height: 6rem;
+}
+
+h3 span {
+  transition: 300ms ease all;
+  display: inline-block;
+
+}
+
+h3 span:hover {
+  transform: translateY(-45px) rotate(12deg) scale(1.6);
+  z-index: 5;
+}
+
+select {
+  margin: 1rem 0;
+  outline: 0;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: 1.5rem;
+  border: 2px solid #333;
+  position: relative;
+  display: block;
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::before {
+  content: "🍕";
+  position: absolute;
+  top: -8px;
+  font-size: 2rem;
+  right: 5px;
+  width: 2rem;
+  height: 2rem;
+  padding: 2rem;
+  z-index: 1;
+  cursor: pointer;
+}
+
+#btn-start {
+  padding: .4rem .8rem;
+  background: transparent;
+  font-size: 1.8rem;
+  width: 13rem;
+  display: block;
+  margin: 2rem auto;
+  border: 0;
+  background: rgba(220, 222, 222, 0.8);
+  cursor: pointer;
+  /* border-bottom: 2px solid #333; */
+  transition: 200ms ease all;
+  position: relative;
+}
+
+#btn-start::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #333;
+  height: 0;
+  width: 0;
+  transition: 300ms ease all;
+}
+
+#btn-start:hover {
+  /* border-bottom: none; */
+  background: transparent;
+}
+
+#btn-start:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: .2rem;
+  width: 100%;
+}

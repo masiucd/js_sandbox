@@ -63,7 +63,7 @@ body {
   margin: 0 auto;
 }
 
-.word>div {
+.word>span {
   text-decoration: underline 5px solid #fff;
 
 }
@@ -114,7 +114,7 @@ span {
   background: rgba(0, 0, 0, 0.3);
   width: 100%;
   height: 100%;
-  transition: 200ms ease all;
+  transition: 800ms ease all;
 }
 
 .popup-container .popup {
