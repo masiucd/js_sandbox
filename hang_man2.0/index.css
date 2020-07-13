@@ -168,3 +168,8 @@ span {
   align-items: center;
   transition: 300ms ease all;
 }
+
+.show {
+
+  transform: translateX(0%);
+}

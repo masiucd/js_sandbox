@@ -16,11 +16,21 @@
     'reactjs',
     'haskell',
   ];
-  let correctLettersList = ['c', 'o', 'o', 'l'];
+  let correctLettersList = [];
   let wrongLettersList = [];
+
   function randomWord(list) {
     return list[Math.floor(Math.random() * list.length)];
   }
+
+  function showNotification() {
+    notification.classList.add('show');
+    setTimeout(() => {
+      notification.classList.remove('show');
+    }, 3000);
+  }
+  function updateWrongLetters() {}
+
   function wordToArray(word) {
     return word
       .split('')
@@ -39,13 +49,39 @@
     word.innerHTML = `
         ${wordToArray(selectedWord)}
       `;
-    const innerWord = word.innerText.replace(/\n/g, '');
-    console.log(innerWord);
-    if (innerWord === selectedWord) {
+    const fixedWord = word.innerText.replace(/\n/g, '');
+    console.log(fixedWord);
+    if (fixedWord === selectedWord) {
       finalMessage.innerText = `Congratulations You win 💪🏻`;
       popupContainer.style.transform = `translateY(0%)`;
     }
   }
+
+  window.addEventListener('keydown', (e) => {
+    // console.log(e.keyCode);
+    // console.log(String.fromCharCode(e.keyCode));
+    // from A-Z
+    if (e.keyCode >= 65 && e.keyCode <= 90) {
+      const letter = e.key;
+      if (selectedWord.includes(letter)) {
+        if (!correctLettersList.includes(letter)) {
+          correctLettersList.push(letter);
+
+          displayWord();
+        } else {
+          showNotification();
+        }
+      } else {
+        if (!wrongLettersList.includes(letter)) {
+          wrongLettersList.push(letter);
+
+          updateWrongLetters();
+        } else {
+          showNotification();
+        }
+      }
+    }
+  });
 
   displayWord();
   console.log(selectedWord);
