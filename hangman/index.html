@@ -3,13 +3,14 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hangman</title>
-    <link rel="stylesheet" href="index.css">
+    <title>hangman</title>
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-
     <div class="game">
       <h1>Hangman Game</h1>
+
+
       <svg height="250" width="200" class="figure-wrapper">
         <!-- ROD -->
         <line x1="60" y1="20" x2="140" y2="20" />
@@ -23,7 +24,8 @@
                   <line x1="140" y1="90" x2="140" y2="150" class="figure-part"
                     />
                     <!-- ARMS -->
-                    <line x1="140" y1="90" x2="90" y2="120" class="figure-part"
+                    <line x1="140" y1="90" x2="90" y2="120"
+                      class="figure-part"
                       />
                       <line x1="140" y1="90" x2="190" y2="120"
                         class="figure-part" />
@@ -34,32 +36,34 @@
                           class="figure-part" />
                           <line x1="140" y1="150" x2="160" y2="180"
                             class="figure-part" />
-
+                            <!-- END SVG -->
                           </svg>
 
+                          <div class="wrong-letters"></div>
 
-                          <div class="wrong-letters">
-
-                          </div>
-
-                          <div class="word" id="word">
+                          <div class="words-wrapper" id="word">
 
                           </div>
 
-                          <!-- POP up for final messagees -->
 
-                          <div class="popup-container" id="popup-container">
-                            <div class="popup">
-                              <h2 id="final-message">You win</h2>
-                              <button id="play-again">Play again</button>
+                          <div class="modal-wrapper" id="modal">
+                            <div class="modalBody">
+                              <h3 id="final-message">
+                                You win the game
+                              </h3>
+                              <button id="new-game">New Game</button>
+
+                              <!-- END Modal body -->
                             </div>
+                            <!-- End Modal -->
                           </div>
 
 
-                          <!--Notification  -->
-                          <div class="notification" id="notification">
-                            <p>you have already entred this letter</p>
+                          <div class="notification-wrapper">
+                            <p id="notification">You have already used the
+                              letter</p>
                           </div>
+                          <!-- end GAME Wrapper  -->
                         </div>
 
 
