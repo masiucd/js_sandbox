@@ -6,7 +6,6 @@
 
   let data = () => Array.from(Array(30).keys());
 
-  let isLoading = false;
   let page = 1;
   let limit = 5;
 
@@ -25,7 +24,6 @@
 
   function render() {
     let postsData = data();
-    // let xs = [...postsData, ...Array.from(Array(20).keys(), () => +1)];
     postsData.forEach(
       (x) => (posts.innerHTML += `<div class="item"> ${x}  </div> `),
     );
