@@ -1,0 +1,196 @@
+*::before,
+*::after,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 10px;
+  font-family: sans-serif;
+}
+
+body {
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  background: rgba(13, 57, 179, 0.774);
+}
+
+
+.game {
+  margin: 2rem auto;
+  width: 960px;
+  height: 100%;
+  position: relative;
+}
+
+
+.figure-part {
+  display: none;
+  transition: 500ms ease all;
+}
+
+.game h1 {
+  font-size: 5rem;
+  border-bottom: 2px solid #fff;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.figure-wrapper {
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 4px;
+  stroke-linecap: round;
+  margin: 3rem auto;
+
+}
+
+.wrong-words {
+  padding: 2rem;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  min-width: 36rem;
+  height: 10rem;
+  position: absolute;
+  top: 15rem;
+  right: 0;
+}
+
+#word {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  margin: 2rem auto;
+  padding: 2rem 1rem;
+
+}
+
+#letter {
+  position: relative;
+  padding: 1rem;
+  margin: 2rem;
+
+}
+
+#letter::after {
+  content: '';
+  position: absolute;
+  background: #fff;
+  bottom: 0;
+  left: 0;
+  padding: .1rem;
+  width: 100%;
+  height: .1rem;
+}
+
+#status {
+  position: fixed;
+  top: 20%;
+  transform: translateX(-1000%);
+  transition: 800ms ease all;
+  border: #fff 3px solid;
+  padding: 2rem;
+  height: 30rem;
+  width: 70vw;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal {
+  transform: translateY(-1000%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 800ms ease all;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-body {
+  padding: 3rem;
+  width: 50%;
+  height: 50%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+}
+
+#wrong-word {
+  position: relative;
+  padding: 1rem;
+  margin: 2rem;
+  font-size: 2rem;
+  display: inline-block;
+}
+
+#wrong-word::after {
+  content: '';
+  position: absolute;
+  background: #fff;
+  bottom: 0;
+  left: 0;
+  padding: .1rem;
+  width: 100%;
+  height: .1rem;
+}
+
+#final-msg {
+  color: #333
+}
+
+#wrong-word-title {
+  color: #fff;
+  font-size: 3rem;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 2rem;
+}
+
+#new-game {
+  font-size: 1.8rem;
+  width: 14rem;
+  padding: 1rem 8rem;
+  border-radius: .5rem;
+  border: 2px solid #333;
+  background: transparent;
+  transition: 500ms ease-in-out all;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  margin: 2rem auto;
+
+}
+
+#new-game:hover {
+  transform: scale(0.96);
+  border: 2px solid #323232;
+  background: #333;
+  color: #fff;
+}

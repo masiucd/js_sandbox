@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hangman</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div class="game">
+      <h1>Hang Man Game</h1>
+      <svg height="250" width="200" class="figure-wrapper">
+        <!-- ROD -->
+        <line x1="60" y1="20" x2="140" y2="20" />
+          <line x1="140" y1="20" x2="140" y2="50" />
+            <line x1="60" y1="20" x2="60" y2="240" />
+              <line x1="20" y1="240" x2="100" y2="240" />
+
+                <!-- HEAD -->
+                <circle cx="140" cy="70" r="20" class="figure-part" />
+                  <!-- Body -->
+                  <line x1="140" y1="90" x2="140" y2="150" class="figure-part"
+                    />
+                    <!-- ARMS -->
+                    <line x1="140" y1="90" x2="90" y2="120"
+                      class="figure-part"
+                      />
+                      <line x1="140" y1="90" x2="190" y2="120"
+                        class="figure-part" />
+
+                        <!-- LEGS -->
+
+                        <line x1="140" y1="150" x2="120" y2="180"
+                          class="figure-part" />
+                          <line x1="140" y1="150" x2="160" y2="180"
+                            class="figure-part" />
+                            <!-- END SVG -->
+                          </svg>
+
+                          <div class="wrong-words" id="wrong-words">
+                            <h3 id="wrong-word-title"></h3>
+                          </div>
+
+                          <div id="word">
+                            <h3 id="selected-word"></h3>
+                          </div>
+
+                          <div id="status">
+                            <h3 id="status-h3"></h3>
+                          </div>
+
+                          <div id="modal">
+                            <div class="modal-body">
+                              <h3 id="final-msg"></h3>
+                              <button id="new-game">New Game</button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <script src="./app.js"></script>
+                      </body>
+                    </html>
