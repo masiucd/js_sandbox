@@ -1,0 +1,88 @@
+*::before,
+*::after,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 10px;
+  font-family: sans-serif;
+}
+
+body {
+  height: 100vh;
+  box-sizing: border-box;
+  color: #333;
+}
+
+.container {
+  max-width: 900px;
+  height: 90%;
+  margin: 0 auto;
+  border: 2px solid red;
+  padding: 3rem;
+  flex-grow: 1;
+}
+
+#stack {
+  border: 2px solid red;
+
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#stack-item {
+  border: 2px solid #333;
+  padding: 3rem;
+  font-size: 3rem;
+  width: 80%;
+  text-align: center;
+  background: #fbff00;
+  transition: all 500ms ease;
+}
+
+#stack-item span {
+  color: #fff;
+  text-shadow: 1px 2px 2px #333;
+}
+
+.btn-group {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.btn-group button {
+  padding: .5rem .8rem;
+  font-size: 2rem;
+  background: #333;
+  color: #fff;
+  border: 0;
+  width: 12rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px #ccc;
+  transition: all 500ms ease;
+}
+
+.btn-group button:hover {
+  background: #fff;
+  color: #333;
+  width: 11rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  box-shadow: 3px 3px 3px #ccc;
+}
+
+.btn-group button:active {
+  position: relative;
+  top: 12px;
+  box-shadow: 4px 6px 6px #ccc;
+}
