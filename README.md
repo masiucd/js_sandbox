@@ -7,6 +7,7 @@ It's important to understand how Javascript works under hood, how to use clojure
 
 ### Projects ⚛️🛠🃏🤗
 
-* Hangman Game 🐙
+* Hangman Game 🐙 [hangman](https://codepen.io/legionista1994/pen/ExPdMZB)
 * Infinitive Scroll ☺️
-* Speed meter 🧚🏻‍♂️
+* Speed meter 🧚🏻‍♂️ [speed js](https://codepen.io/legionista1994/pen/xxZyBdK)
+* Stack js 🧚🏻‍🍛  [Stack js](https://codepen.io/legionista1994/pen/dyGrKEe)
