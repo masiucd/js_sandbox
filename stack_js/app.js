@@ -4,8 +4,9 @@
     var popBtn = document.getElementById('pop-btn');
     var peekBtn = document.getElementById('peek-btn');
     var sizeBtn = document.getElementById('size-btn');
-    var showBtn = document.getElementById('show-btn');
     var stackDataSelectEl = document.getElementById('stack-data');
+    var showPeek = document.getElementById('show-peek');
+    var showSize = document.getElementById('show-size');
     function renderOptionElements() {
         var xs = Array.from(Array(10).keys());
         stackDataSelectEl.innerHTML += xs.map(function (x) { return "<option value=\"" + (x + 1) + "\">" + (x + 1) + "</option/>"; });
@@ -51,6 +52,15 @@
     popBtn.addEventListener('click', function () {
         stack.pop();
         stack.render();
+    });
+    peekBtn.addEventListener('click', function () {
+        if (stack.size() > 0) {
+            console.log(stack.peek());
+            showPeek.innerText = "Peek is " + stack.peek();
+        }
+    });
+    sizeBtn.addEventListener('click', function () {
+        showSize.innerHTML = "Stacks size is : " + stack.size();
     });
     renderOptionElements();
 })();

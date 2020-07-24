@@ -43,19 +43,16 @@ body {
   max-width: 900px;
   height: 90%;
   margin: 0 auto;
-  border: 2px solid red;
   padding: 3rem;
   flex-grow: 1;
 }
 
 #stack {
-  border: 2px solid red;
-
-  width: 70%;
-  margin: 0 auto;
+  width: 60%;
+  margin: 2rem auto;
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
 }
 
@@ -108,4 +105,18 @@ body {
   position: relative;
   top: 12px;
   box-shadow: 4px 6px 6px #ccc;
+}
+
+#show-peek {
+  text-align: center;
+  font-size: 3rem;
+  padding: 3rem;
+
+}
+
+#show-size {
+  text-align: center;
+  font-size: 3rem;
+  padding: 3rem;
+
 }

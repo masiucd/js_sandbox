@@ -4,8 +4,9 @@
   const popBtn = document.getElementById('pop-btn');
   const peekBtn = document.getElementById('peek-btn');
   const sizeBtn = document.getElementById('size-btn');
-  const showBtn = document.getElementById('show-btn');
   const stackDataSelectEl = document.getElementById('stack-data');
+  const showPeek = document.getElementById('show-peek');
+  const showSize = document.getElementById('show-size');
 
   function renderOptionElements() {
     let xs = Array.from(Array(10).keys());
@@ -70,6 +71,17 @@
     stack.pop();
 
     stack.render();
+  });
+
+  peekBtn.addEventListener('click', () => {
+    if (stack.size() > 0) {
+      console.log(stack.peek());
+      showPeek.innerText = `Peek is ${stack.peek()}`;
+    }
+  });
+
+  sizeBtn.addEventListener('click', () => {
+    showSize.innerHTML = `Stacks size is : ${stack.size()}`;
   });
 
   renderOptionElements();
