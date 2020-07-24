@@ -11,10 +11,32 @@ html {
   font-family: sans-serif;
 }
 
+h1 {
+  font-size: 8em;
+  text-align: center;
+  padding: .4em;
+}
+
 body {
   height: 100vh;
   box-sizing: border-box;
   color: #333;
+}
+
+#stack-data {
+  margin: 1rem auto;
+  display: block;
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+  width: 12rem;
+  appearance: none;
+  outline: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border-radius: 1rem;
+  border: 2px solid #333;
+  padding: .6rem 1rem;
 }
 
 .container {
@@ -62,6 +84,7 @@ body {
 .btn-group button {
   padding: .5rem .8rem;
   font-size: 2rem;
+  outline: 0;
   background: #333;
   color: #fff;
   border: 0;

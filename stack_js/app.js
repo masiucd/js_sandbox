@@ -5,6 +5,11 @@
     var peekBtn = document.getElementById('peek-btn');
     var sizeBtn = document.getElementById('size-btn');
     var showBtn = document.getElementById('show-btn');
+    var stackDataSelectEl = document.getElementById('stack-data');
+    function renderOptionElements() {
+        var xs = Array.from(Array(10).keys());
+        stackDataSelectEl.innerHTML += xs.map(function (x) { return "<option value=\"" + (x + 1) + "\">" + (x + 1) + "</option/>"; });
+    }
     function Stack() {
         var stack = [];
         return {
@@ -34,9 +39,12 @@
         };
     }
     var stack = Stack();
-    // stack.render();
+    var current = 0;
+    stackDataSelectEl.addEventListener('change', function (event) {
+        current = event.target.value;
+    });
     pushBtn.addEventListener('click', function () {
-        stack.push(3);
+        stack.push(current);
         stack.update();
         stack.render();
     });
@@ -44,4 +52,5 @@
         stack.pop();
         stack.render();
     });
+    renderOptionElements();
 })();

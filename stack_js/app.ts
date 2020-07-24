@@ -5,6 +5,14 @@
   const peekBtn = document.getElementById('peek-btn');
   const sizeBtn = document.getElementById('size-btn');
   const showBtn = document.getElementById('show-btn');
+  const stackDataSelectEl = document.getElementById('stack-data');
+
+  function renderOptionElements() {
+    let xs = Array.from(Array(10).keys());
+    stackDataSelectEl.innerHTML += xs.map(
+      (x) => `<option value="${x + 1}">${x + 1}</option/>`,
+    );
+  }
 
   type StackReturnType<T> = {
     push: (data: T) => void;
@@ -12,7 +20,7 @@
     peek: () => T;
     size: () => number;
     show: () => T[];
-    update() => void;
+    update: () => void;
     render: () => void;
   };
 
@@ -35,8 +43,8 @@
       show() {
         return stack;
       },
-      update(){
-        console.log(stack)
+      update() {
+        console.log(stack);
       },
       render() {
         stackEl.innerHTML = `${stack
@@ -47,19 +55,22 @@
   }
 
   let stack = Stack();
+  let current = 0;
 
-
-  // stack.render();
+  stackDataSelectEl.addEventListener('change', (event: Event) => {
+    current = event.target.value;
+  });
 
   pushBtn.addEventListener('click', () => {
-    stack.push(3);
-
-    stack.update()
-    stack.render()
+    stack.push(current);
+    stack.update();
+    stack.render();
   });
   popBtn.addEventListener('click', () => {
     stack.pop();
 
-    stack.render()
+    stack.render();
   });
+
+  renderOptionElements();
 })();
