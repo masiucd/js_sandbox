@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css?family=Space+Mono:400|Work+Sans:400");
+
+:root {
+  /* Define Colors as colors */
+  --green: #00ebc7;
+  --red: #ff5470;
+  --yellow: #fde24f;
+  --black: #1b2d45;
+  --blackTransparent: rgba(27, 45, 69, 0.4);
+  --white: #feffff;
+  --darkBlue: #00214d;
+  --grey: #bfbfbf;
+  --lightGrey: #f2f4f6;
+  --transparentDark: rgba(0, 0, 0, 0.05);
+  --transparentDark2: rgba(0, 0, 0, 0.1);
+  --transparentDark3: rgba(0, 0, 0, 0.06);
+  /* Define Colors intentions */
+
+  --primary: var(--green);
+  --danger: var(--red);
+  --background: var(--black);
+  --headerAndFooterBg: var(--white);
+  --headerAndFooterColor: var(--black);
+  --textColor: var(--white);
+  --lineColor: var(--grey);
+  --border-left-color: var(--black);
+
+  /* Styles */
+  --line: solid 1px var(--lineColor);
+
+  /* Elevations */
+  --shadowXs: 0 0 0 1px var(--transparentDark);
+  --shadowS: 0 1px 2px 0 var(--transparentDark);
+  --shadow: 0 1px 3px 0 var(--transparentDark2),
+    0 1px 2px 0 var(--transparentDark3);
+  --shadowMd: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadowLg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadowXl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow2Xl: 0 25px 50px -12px rgba(0, 0, 0, 0.85);
+  --shadowInner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  --shadowOutline: 0 0 0 3px rgba(66, 153, 225, 0.5);
+
+  /* Type */
+  --headingFont: "Space Mono", monospace;
+  --bodyFont: "Work Sans", sans-serif;
+  --h1: 3.052em;
+  --h2: 2.441em;
+  --h3: 1.953em;
+  --h4: 1.563em;
+  --h5: 1.25em;
+  --smallText: 0.8em;
+
+  /* positioning */
+  --containerPadding: 2.5%;
+  --headerHeight: 4rem;
+
+  /* Utils */
+  --border-radius: 4px;
+
+  /* transitions */
+  --main-trans: 300ms ease-in all;
+}
+
+*::before,
+*::after,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 112.5%;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  font-family: var(--bodyFont);
+  font-weight: 400;
+  line-height: 1.65;
+  background: var(--background);
+  color: var(--textColor);
+}
+header {
+  background: var(--headerAndFooterBg);
+  color: var(--headerAndFooterColor);
+  box-shadow: var(--shadowMd);
+  padding: 0 var(--containerPadding);
+  height: var(--headerHeight);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-bottom: calc(12rem + 2px);
+  z-index: 2;
+}
+button {
+  cursor: pointer;
+}
+
+.main {
+  max-width: 1020px;
+  margin: var(--headerHeight) auto;
+  /* TODO: REMOVE */
+  border: 2px solid red;
+  padding: calc(3rem + var(--headerHeight)) var(--containerPadding);
+}
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 0.5em;
+}
+
+.search-wrapper form {
+  display: flex;
+  align-items: center;
+}
+
+form label {
+  position: relative;
+}
+.search-wrapper form input {
+  flex: 3;
+  border-radius: var(--border-radius);
+  border: 2px solid var(--green);
+  font-size: 1.3em;
+  padding: 0.3em 0.8em;
+  outline: none;
+}
+
+.search-wrapper form #search-btn {
+  position: absolute;
+  right: 0;
+  padding: 0.4em;
+  font-size: 1.1em;
+  overflow: hidden;
+  border: 1px solid var(--black);
+  border-radius: var(--border-radius);
+  background: transparent;
+}
+
+.search-wrapper form #random-btn {
+  padding: 0.1em;
+  background: transparent;
+  border: none;
+  flex: 1;
+  width: 2em;
+  display: block;
+  font-size: 1.6em;
+  cursor: pointer;
+}
+
+.search-wrapper h2 {
+  color: var(--textColor);
+  flex: 3;
+  padding: 0.4em 0;
+}
