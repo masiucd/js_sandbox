@@ -108,8 +108,7 @@ button {
 .main {
   max-width: 1020px;
   margin: var(--headerHeight) auto;
-  /* TODO: REMOVE */
-  border: 2px solid red;
+
   padding: calc(3rem + var(--headerHeight)) var(--containerPadding);
 }
 
@@ -118,7 +117,7 @@ button {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-
+  width: 100%;
   padding: 0.5em;
 }
 
@@ -130,6 +129,7 @@ button {
 form label {
   position: relative;
 }
+
 .search-wrapper form input {
   flex: 3;
   border-radius: var(--border-radius);
@@ -145,12 +145,12 @@ form label {
   padding: 0.4em;
   font-size: 1.1em;
   overflow: hidden;
-  border: 1px solid var(--black);
+  border: none;
   border-radius: var(--border-radius);
   background: transparent;
 }
 
-.search-wrapper form #random-btn {
+#random-btn {
   padding: 0.1em;
   background: transparent;
   border: none;
@@ -165,4 +165,80 @@ form label {
   color: var(--textColor);
   flex: 3;
   padding: 0.4em 0;
+}
+
+.meal-showcase {
+  padding: 1em 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  justify-content: center;
+  grid-gap: 20px;
+  width: 100%;
+}
+
+.meal-item {
+  /* width: 15em; */
+  min-height: 24em;
+  margin: 0 auto;
+  border: 1px solid var(--green);
+  border-radius: 7px;
+  box-shadow: var(--shadowXl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.meal-item .body {
+  padding: 1rem;
+}
+
+.meal-item img {
+  width: 100%;
+  border: 2px solid var(--black);
+  border-radius: var(--border-radius);
+  position: relative;
+  object-fit: cover;
+  height: 30vh;
+}
+
+.meal-item img:after {
+  content: "";
+  background: red;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@media (max-width: 700px) {
+  form {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  form input {
+    width: 100%;
+  }
+
+  form #random-btn {
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  main.main {
+    width: 100vw;
+  }
+}
+
+#result-heading {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 3em;
+}
+#result-heading span {
+  font-weight: 600;
+  border-bottom: 3px solid var(--green);
 }

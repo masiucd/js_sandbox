@@ -1,25 +1,64 @@
-// https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
+/**
+   * Search meal by name
+  https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
+
+  List all meals by first letter
+  https://www.themealdb.com/api/json/v1/1/search.php?f=a
+ */
 
 (() => {
   const formElement = document.querySelector("form") as HTMLFormElement;
   const mealInputEl = document.getElementById("meal-input") as HTMLInputElement;
   const randomBtn = document.getElementById("random-btn") as HTMLButtonElement;
+  const resultHeading = document.getElementById(
+    "result-heading",
+  ) as HTMLButtonElement;
+  const mealShowcaseEl = document.querySelector(
+    ".meal-showcase",
+  ) as HTMLDivElement;
 
-  const singleMeal = [];
+  const mealData: Array<Record<string, any>> = [];
 
-  async function getData(endpoint: string): Promise<void> {
+  async function getData(endpoint: string): Promise<Array<any>> {
     const res = await fetch(
       `https://www.themealdb.com/api/json/v1/1/search.php?s=${endpoint}`,
     );
     const data = await res.json();
 
-    console.log(data);
+    return data;
   }
 
-  function searchMeal(e: Event) {
+  async function searchMeal(e: Event) {
     e.preventDefault();
-    console.log(mealInputEl.value);
-    mealInputEl.value = "";
+    let inputValue = mealInputEl.value;
+    if (inputValue) {
+      let mealsData = await getData(mealInputEl.value);
+      resultHeading.innerHTML = `Search result for <span>${inputValue}</span>`;
+
+      renderMeals(mealsData);
+      mealInputEl.value = "";
+    } else {
+      alert("fill in the input");
+    }
+  }
+
+  function renderMeals(mealData: Record<string, any>) {
+    mealShowcaseEl.innerHTML = mealData.meals
+      .map(
+        (meal: Record<string, any>) =>
+          ` <div class="meal-item">
+                <img src=${meal.strMealThumb} alt=${meal.strMeal} />
+                <div class="body">
+                    <strong> ${meal.strMeal} </strong>
+                    <p> From ${meal.strArea} </p>
+                    <p> Category ${meal.strCategory} </p>
+                    <div class="instructions">
+                      <p> ${meal.strInstructions.slice(0, 40)} </p>
+                    </div>
+                  </div>
+            </div>`,
+      )
+      .join("");
   }
 
   formElement.addEventListener("submit", searchMeal);

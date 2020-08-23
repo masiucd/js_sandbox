@@ -1,5 +1,11 @@
 "use strict";
-// https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
+/**
+   * Search meal by name
+  https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
+
+  List all meals by first letter
+  https://www.themealdb.com/api/json/v1/1/search.php?f=a
+ */
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -40,7 +46,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     var formElement = document.querySelector("form");
     var mealInputEl = document.getElementById("meal-input");
     var randomBtn = document.getElementById("random-btn");
-    var singleMeal = [];
+    var resultHeading = document.getElementById("result-heading");
+    var mealShowcaseEl = document.querySelector(".meal-showcase");
+    var mealData = [];
     function getData(endpoint) {
         return __awaiter(this, void 0, void 0, function () {
             var res, data;
@@ -52,16 +60,41 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                         return [4 /*yield*/, res.json()];
                     case 2:
                         data = _a.sent();
-                        console.log(data);
-                        return [2 /*return*/];
+                        return [2 /*return*/, data];
                 }
             });
         });
     }
     function searchMeal(e) {
-        e.preventDefault();
-        console.log(mealInputEl.value);
-        mealInputEl.value = "";
+        return __awaiter(this, void 0, void 0, function () {
+            var inputValue, mealsData;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        e.preventDefault();
+                        inputValue = mealInputEl.value;
+                        if (!inputValue) return [3 /*break*/, 2];
+                        return [4 /*yield*/, getData(mealInputEl.value)];
+                    case 1:
+                        mealsData = _a.sent();
+                        resultHeading.innerHTML = "Search result for <span>" + inputValue + "</span>";
+                        renderMeals(mealsData);
+                        mealInputEl.value = "";
+                        return [3 /*break*/, 3];
+                    case 2:
+                        alert("fill in the input");
+                        _a.label = 3;
+                    case 3: return [2 /*return*/];
+                }
+            });
+        });
+    }
+    function renderMeals(mealData) {
+        mealShowcaseEl.innerHTML = mealData.meals
+            .map(function (meal) {
+            return " <div class=\"meal-item\">\n                <img src=" + meal.strMealThumb + " alt=" + meal.strMeal + " />\n                <div class=\"body\">\n                    <strong> " + meal.strMeal + " </strong>\n                    <p> From " + meal.strArea + " </p>\n                    <p> Category " + meal.strCategory + " </p>\n                    <div class=\"instructions\">\n                      <p> " + meal.strInstructions.slice(0, 40) + " </p>\n                    </div>\n                  </div>\n            </div>";
+        })
+            .join("");
     }
     formElement.addEventListener("submit", searchMeal);
 })();
