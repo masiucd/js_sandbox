@@ -50,11 +50,8 @@
                 <img src=${meal.strMealThumb} alt=${meal.strMeal} />
                 <div class="body">
                     <strong> ${meal.strMeal} </strong>
-                    <p> From ${meal.strArea} </p>
-                    <p> Category ${meal.strCategory} </p>
-                    <div class="instructions">
-                      <p> ${meal.strInstructions.slice(0, 40)} </p>
-                    </div>
+                    <p> From <span>${meal.strArea}</span> </p>
+                    <p> Category <span>${meal.strCategory}</span> </p>
                   </div>
             </div>`,
       )

@@ -13,7 +13,7 @@
   --lightGrey: #f2f4f6;
   --transparentDark: rgba(0, 0, 0, 0.05);
   --transparentDark2: rgba(0, 0, 0, 0.1);
-  --transparentDark3: rgba(0, 0, 0, 0.06);
+  --transparentDark3: rgba(0, 0, 0, 0.8);
   /* Define Colors intentions */
 
   --primary: var(--green);
@@ -177,8 +177,6 @@ form label {
 }
 
 .meal-item {
-  /* width: 15em; */
-  min-height: 24em;
   margin: 0 auto;
   border: 1px solid var(--green);
   border-radius: 7px;
@@ -186,10 +184,7 @@ form label {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-}
-
-.meal-item .body {
-  padding: 1rem;
+  position: relative;
 }
 
 .meal-item img {
@@ -201,14 +196,22 @@ form label {
   height: 30vh;
 }
 
-.meal-item img:after {
-  content: "";
-  background: red;
-  width: 100%;
-  height: 100%;
+.meal-item:hover .body {
+  opacity: 1;
+}
+
+.meal-item .body {
+  display: flex;
+  opacity: 0;
+  padding: 1rem;
   position: absolute;
-  top: 0;
-  left: 0;
+  background: var(--transparentDark3);
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.2s ease-in;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 700px) {

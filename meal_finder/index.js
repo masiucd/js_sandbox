@@ -92,7 +92,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function renderMeals(mealData) {
         mealShowcaseEl.innerHTML = mealData.meals
             .map(function (meal) {
-            return " <div class=\"meal-item\">\n                <img src=" + meal.strMealThumb + " alt=" + meal.strMeal + " />\n                <div class=\"body\">\n                    <strong> " + meal.strMeal + " </strong>\n                    <p> From " + meal.strArea + " </p>\n                    <p> Category " + meal.strCategory + " </p>\n                    <div class=\"instructions\">\n                      <p> " + meal.strInstructions.slice(0, 40) + " </p>\n                    </div>\n                  </div>\n            </div>";
+            return " <div class=\"meal-item\">\n                <img src=" + meal.strMealThumb + " alt=" + meal.strMeal + " />\n                <div class=\"body\">\n                    <strong> " + meal.strMeal + " </strong>\n                    <p> From <span>" + meal.strArea + "</span> </p>\n                    <p> Category <span>" + meal.strCategory + "</span> </p>\n                  </div>\n            </div>";
         })
             .join("");
     }
