@@ -10,6 +10,7 @@
   const formElement = document.querySelector("form") as HTMLFormElement;
   const mealInputEl = document.getElementById("meal-input") as HTMLInputElement;
   const randomBtn = document.getElementById("random-btn") as HTMLButtonElement;
+
   const resultHeading = document.getElementById(
     "result-heading",
   ) as HTMLButtonElement;
@@ -21,7 +22,7 @@
 
   async function getData(endpoint: string): Promise<Array<any>> {
     const res = await fetch(
-      `https://www.themealdb.com/api/json/v1/1/search.php?s=${endpoint}`,
+      `https://www.themealdb.com/api/json/v1/1${endpoint}`,
     );
     const data = await res.json();
 
@@ -32,7 +33,7 @@
     e.preventDefault();
     let inputValue = mealInputEl.value;
     if (inputValue) {
-      let mealsData = await getData(mealInputEl.value);
+      let mealsData = await getData(`/search.php?s=${mealInputEl.value}`);
       resultHeading.innerHTML = `Search result for <span>${inputValue}</span>`;
 
       renderMeals(mealsData);
@@ -49,7 +50,7 @@
           ` <div class="meal-item">
                 <img src=${meal.strMealThumb} alt=${meal.strMeal} />
                 <div class="body">
-                    <strong> ${meal.strMeal} </strong>
+                    <strong> ${meal.strMeal.slice(0, 11)} </strong>
                     <p> From <span>${meal.strArea}</span> </p>
                     <p> Category <span>${meal.strCategory}</span> </p>
                   </div>
@@ -58,5 +59,27 @@
       .join("");
   }
 
+  async function renderRandomMeal() {
+    const dish = await getData(`/random.php`);
+    mealShowcaseEl.innerHTML = dish?.meals
+      .map(
+        (meal: Record<string, any>) =>
+          ` <div class="meal-item">
+        <img src=${meal.strMealThumb} alt=${meal.strMeal} />
+      <div class="body">
+          <strong> ${meal.strMeal.slice(0, 11)} </strong>
+          <p> From <span>${meal.strArea}</span> </p>
+          <p> Category <span>${meal.strCategory}</span> </p>
+        </div>
+      </div>`,
+      )
+      .join("");
+    resultHeading.innerHTML = `Search result for <span>${dish.meals[0].strMeal.slice(
+      0,
+      11,
+    )}</span>`;
+  }
+
   formElement.addEventListener("submit", searchMeal);
+  randomBtn.addEventListener("click", renderRandomMeal);
 })();

@@ -106,9 +106,8 @@ button {
 }
 
 .main {
-  max-width: 1020px;
+  max-width: 1120px;
   margin: var(--headerHeight) auto;
-
   padding: calc(3rem + var(--headerHeight)) var(--containerPadding);
 }
 
@@ -172,7 +171,7 @@ form label {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   justify-content: center;
-  grid-gap: 20px;
+  grid-gap: 15px;
   width: 100%;
 }
 
@@ -193,7 +192,6 @@ form label {
   border-radius: var(--border-radius);
   position: relative;
   object-fit: cover;
-  height: 30vh;
 }
 
 .meal-item:hover .body {

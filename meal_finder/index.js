@@ -54,7 +54,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
             var res, data;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=" + endpoint)];
+                    case 0: return [4 /*yield*/, fetch("https://www.themealdb.com/api/json/v1/1" + endpoint)];
                     case 1:
                         res = _a.sent();
                         return [4 /*yield*/, res.json()];
@@ -74,7 +74,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                         e.preventDefault();
                         inputValue = mealInputEl.value;
                         if (!inputValue) return [3 /*break*/, 2];
-                        return [4 /*yield*/, getData(mealInputEl.value)];
+                        return [4 /*yield*/, getData("/search.php?s=" + mealInputEl.value)];
                     case 1:
                         mealsData = _a.sent();
                         resultHeading.innerHTML = "Search result for <span>" + inputValue + "</span>";
@@ -92,9 +92,27 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function renderMeals(mealData) {
         mealShowcaseEl.innerHTML = mealData.meals
             .map(function (meal) {
-            return " <div class=\"meal-item\">\n                <img src=" + meal.strMealThumb + " alt=" + meal.strMeal + " />\n                <div class=\"body\">\n                    <strong> " + meal.strMeal + " </strong>\n                    <p> From <span>" + meal.strArea + "</span> </p>\n                    <p> Category <span>" + meal.strCategory + "</span> </p>\n                  </div>\n            </div>";
+            return " <div class=\"meal-item\">\n                <img src=" + meal.strMealThumb + " alt=" + meal.strMeal + " />\n                <div class=\"body\">\n                    <strong> " + meal.strMeal.slice(0, 11) + " </strong>\n                    <p> From <span>" + meal.strArea + "</span> </p>\n                    <p> Category <span>" + meal.strCategory + "</span> </p>\n                  </div>\n            </div>";
         })
             .join("");
     }
+    function renderRandomMeal() {
+        return __awaiter(this, void 0, void 0, function () {
+            var dish;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, getData("/random.php")];
+                    case 1:
+                        dish = _a.sent();
+                        mealShowcaseEl.innerHTML = dish === null || dish === void 0 ? void 0 : dish.meals.map(function (meal) {
+                            return " <div class=\"meal-item\">\n        <img src=" + meal.strMealThumb + " alt=" + meal.strMeal + " />\n      <div class=\"body\">\n          <strong> " + meal.strMeal.slice(0, 11) + " </strong>\n          <p> From <span>" + meal.strArea + "</span> </p>\n          <p> Category <span>" + meal.strCategory + "</span> </p>\n        </div>\n      </div>";
+                        }).join("");
+                        resultHeading.innerHTML = "Search result for <span>" + dish.meals[0].strMeal.slice(0, 11) + "</span>";
+                        return [2 /*return*/];
+                }
+            });
+        });
+    }
     formElement.addEventListener("submit", searchMeal);
+    randomBtn.addEventListener("click", renderRandomMeal);
 })();
