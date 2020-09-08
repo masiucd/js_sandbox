@@ -7,10 +7,11 @@ Not big projects but small tiny ones that focus on the core language. ⚛️💪
 
 It's important to understand how Javascript works under hood, how to use clojure's λ🃏 in javascript and how scope works in _JS_.
 
-[hang-man](#search-app)
-[Speed meter](#speed)
-[stack data structure](#stack)
-[Search app](#search-app)
+## Content
+* [hang-man](#search-app)
+* [Speed meter](#speed)
+* [stack data structure](#stack)
+* [Search app](#search-app)
 
 ### Projects ⚛️🛠🃏🤗
 
@@ -18,7 +19,7 @@ It's important to understand how Javascript works under hood, how to use clojure
 * Infinitive Scroll ☺️
 * Speed meter 🧚🏻‍♂️ [speed js](https://codepen.io/legionista1994/pen/xxZyBdK) <a name = "speed"> </a>
 * Stack js 🧚🏻‍🍛  [Stack js](https://codepen.io/legionista1994/pen/dyGrKEe) <a name = "stack"> </a>
-* Search app 🧚🏻‍🍛  [Stack js](https://codepen.io/legionista1994/pen/dyGrKEe) <a name = "search-app"> </a>
+* Search app 🧚🏻‍🍛  [Spaceship search app](https://codepen.io/legionista1994/pen/qBZxPJz) <a name = "search-app"> </a>
 
 ## Thanks to
 
