@@ -12,6 +12,7 @@ It's important to understand how Javascript works under hood, how to use clojure
 - [Speed meter](#speed)
 - [stack data structure](#stack)
 - [Search app](#search-app)
+- [Image slider](#image-slider)
 
 ### Projects ⚛️🛠🃏🤗
 
@@ -20,7 +21,8 @@ It's important to understand how Javascript works under hood, how to use clojure
 - Infinitive Scroll ☺️
 - Speed meter 🧚🏻‍♂️ [speed js](https://codepen.io/legionista1994/pen/xxZyBdK) <a name = "speed"> </a>
 - Stack js 🧚🏻‍🍛 [Stack js](https://codepen.io/legionista1994/pen/dyGrKEe) <a name = "stack"> </a>
-- Search app 🧚🏻‍🍛 [Spaceship search app](https://codepen.io/legionista1994/pen/qBZxPJz) <a name = "search-app"> </a>
+- Search app 🧚🏻‍🍛 [Spaceship search app](https://codepen.io/legionista1994/pen/qBZxPJz) <a name = "search-app"> </a> 
+- Image slider 🍕 [Image Slider](https://codepen.io/legionista1994/pen/XWdqqPd)<a name = "image-slider"> </a>
 
 ## Thanks to
 
