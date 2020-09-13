@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>infinite scroll</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="title">
+        <h1>Posts from JSON placeholder</h1>
+      </div>
+    </header>
+
+    <main>
+      <div class="filter-wrapper">
+        <input
+          type="text"
+          id="filter"
+          class="filter"
+          placeholder="filter post"
+        />
+      </div>
+
+      <div id="posts"> </div>
+
+      <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
