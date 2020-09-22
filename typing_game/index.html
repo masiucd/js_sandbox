@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>type game</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="icon"> ⚙️ </div>
+    <header id="settings">
+      <form id="settings-form">
+        <label for="difficulty">difficulty</label>
+        <select id="difficulty">
+          <option value="easy">easy</option>
+          <option value="medium">medium</option>
+          <option value="hard">hard</option>
+        </select>
+      </form>
+    </header>
+
+    <main>
+      <section id="game">
+        <div class="titles">
+          <h2>💎 <span>Speed</span> Typer 🚀 </h2>
+          <small>Type the following:</small>
+        </div>
+
+        <h1 id="word"></h1>
+
+        <input
+          type="text"
+          autocomplete="off"
+          placeholder="type the word..."
+          id="text"
+        />
+
+        <div class="time-wrapper"> Time Left: <span id="time">0s</span> </div>
+
+        <p class="score-wrapper"> Score: <span id="score">0</span> </p>
+
+        <div id="end-game-wrapper" class="end-game"></div>
+        <button id="start-game">Start Game</button>
+      </section>
+
+      <div class="game-alert"> </div>
+      <div class="end-game-alert"> </div>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
