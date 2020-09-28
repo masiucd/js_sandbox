@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>speech API</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Speech API Reader</h1>
+      <button id="toggle-btn" class="btn btn-toggle">Toggle Text Box</button>
+
+      <div id="text-box" class="text-box">
+        <div id="close" class="close">𝙓</div>
+        <h3>choose Voice</h3>
+
+        <div class="select-wrapper">
+          <select id="voices"> </select>
+          <span class="select-icon">🤩</span>
+        </div>
+
+        <textarea id="text-area" placeholder="Enter Text to read..."></textarea>
+        <button id="read" class="btn">read</button>
+      </div>
+
+      <div id="root"></div>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
