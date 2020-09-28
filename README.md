@@ -14,6 +14,7 @@ It's important to understand how Javascript works under hood, how to use clojure
 - [Search app](#search-app)
 - [Image slider](#image-slider)
 - [infinite](#scroll)
+- [Speech API](#speech)
 
 ### Projects ⚛️🛠🃏🤗
 
@@ -25,6 +26,7 @@ It's important to understand how Javascript works under hood, how to use clojure
 - Search app 🧚🏻‍🍛 [Spaceship search app](https://codepen.io/legionista1994/pen/qBZxPJz) <a name = "search-app"> </a> 
 - Image slider 🍕 [Image Slider](https://codepen.io/legionista1994/pen/XWdqqPd)<a name = "image-slider"> </a>
 - Infinite Scroll 🔢 [Infinite Scroll](https://codepen.io/legionista1994/pen/zYqaOLP)<a name = "scroll"> </a>
+- [Speech API](https://codepen.io/legionista1994/pen/WNwWyrN)<a name = "speech"> </a>
 
 ## Thanks to
 
